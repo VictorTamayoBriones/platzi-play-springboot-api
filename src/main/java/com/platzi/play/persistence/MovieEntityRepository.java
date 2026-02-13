@@ -24,4 +24,9 @@ public class MovieEntityRepository implements MovieRepository {
     public List<MovieDto> getAll() {
         return this.movieMapper.toDto(this.crudMovieEntity.findAll());
     }
+
+    @Override
+    public MovieDto getById(Long id) {
+        return this.movieMapper.toDto(this.crudMovieEntity.findById(id).orElse(null));
+    }
 }
