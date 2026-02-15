@@ -2,10 +2,9 @@ package com.platzi.play.web.controller;
 
 import com.platzi.play.domain.dto.MovieDto;
 import com.platzi.play.domain.service.MovieService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,13 +19,39 @@ public class MovieController {
     }
 
     @GetMapping("/")
-    public List<MovieDto> getAll() {
-        return movieService.getAll();
+    public ResponseEntity<List<MovieDto>> getAll() {
+        final List<MovieDto> allMovies =  movieService.getAll();
+        return ResponseEntity.ok(allMovies);
     }
 
     @GetMapping("/{id}")
-    public MovieDto getById(@PathVariable Long id) {
-        return movieService.getById(id);
+    public ResponseEntity<MovieDto> getById(@PathVariable Long id) {
+        final MovieDto movieSearched = movieService.getById(id);
+
+        System.out.println("movieSearched " + movieSearched);
+
+        if (movieSearched == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(movieSearched);
+
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<MovieDto> add(@RequestBody MovieDto movieDto) {
+
+        if (movieDto == null) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        final MovieDto movieCreated = movieService.add(movieDto);
+
+        if ( movieCreated == null ) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(movieCreated);
     }
 
 }
