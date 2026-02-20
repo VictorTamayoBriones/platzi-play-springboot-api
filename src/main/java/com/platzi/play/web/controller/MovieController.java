@@ -1,6 +1,7 @@
 package com.platzi.play.web.controller;
 
 import com.platzi.play.domain.dto.MovieDto;
+import com.platzi.play.domain.dto.UpdateMovieDto;
 import com.platzi.play.domain.service.MovieService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<MovieDto>> getAll() {
         final List<MovieDto> allMovies =  movieService.getAll();
         return ResponseEntity.ok(allMovies);
@@ -38,7 +39,7 @@ public class MovieController {
 
     }
 
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<MovieDto> add(@RequestBody MovieDto movieDto) {
 
         if (movieDto == null) {
@@ -52,6 +53,11 @@ public class MovieController {
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(movieCreated);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<MovieDto> update(@PathVariable Long id, @RequestBody UpdateMovieDto updateMovieDto) {
+        return ResponseEntity.ok(movieService.update(id, updateMovieDto));
     }
 
 }
