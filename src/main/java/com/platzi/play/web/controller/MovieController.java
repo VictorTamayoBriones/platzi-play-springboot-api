@@ -1,8 +1,10 @@
 package com.platzi.play.web.controller;
 
 import com.platzi.play.domain.dto.MovieDto;
+import com.platzi.play.domain.dto.SuggestRequestDTO;
 import com.platzi.play.domain.dto.UpdateMovieDto;
 import com.platzi.play.domain.service.MovieService;
+import com.platzi.play.domain.service.PlatziPlayAIService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +16,11 @@ import java.util.List;
 public class MovieController {
 
     public MovieService movieService;
+    public PlatziPlayAIService aiService;
 
-    public MovieController(MovieService movieService) {
+    public MovieController(MovieService movieService, PlatziPlayAIService aiService) {
         this.movieService = movieService;
+        this.aiService = aiService;
     }
 
     @GetMapping
@@ -55,9 +59,27 @@ public class MovieController {
         return ResponseEntity.status(HttpStatus.CREATED).body(movieCreated);
     }
 
+    @PostMapping("/suggest")
+    ResponseEntity<String> generateMoviesSuggestion(@RequestBody SuggestRequestDTO suggestRequestDTO) {
+        return ResponseEntity.ok(aiService.generateMovieSuggestions(suggestRequestDTO.userPreference()));
+    }
+
+
+
     @PutMapping("/{id}")
     public ResponseEntity<MovieDto> update(@PathVariable Long id, @RequestBody UpdateMovieDto updateMovieDto) {
         return ResponseEntity.ok(movieService.update(id, updateMovieDto));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
+        Boolean isMovieDeleted = movieService.delete(id);
+
+        if ( isMovieDeleted == null ) {
+            return ResponseEntity.badRequest().body("Error was executed retry later, please");
+        }
+
+        return ResponseEntity.ok("Movie deleted successfully");
     }
 
 }

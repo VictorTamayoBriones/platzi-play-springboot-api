@@ -1,438 +1,109 @@
 INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Shrek', 90, 'ANIMADA', NULL, '2024-06-01', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
+VALUES
+    -- 60 Películas Únicas Originales
+    ('Shrek', 90, 'ANIMADA', NULL, '2024-06-01', 'D'),
+    ('Inception', 148, 'CIENCIA_FICCION', NULL, '2010-07-16', 'D'),
+    ('Titanic', 195, 'DRAMA', 4.6, '1997-12-19', 'D'),
+    ('John Wick', 101, 'ACCION', NULL, '2014-10-24', 'D'),
+    ('El Conjuro', 112, 'TERROR', 3.0, '2013-07-19', 'D'),
+    ('Coco', 105, 'ANIMADA', 4.7, '2017-10-27', 'D'),
+    ('Interstellar', 169, 'CIENCIA_FICCION', 5.0, '2014-11-07', 'D'),
+    ('Joker', 122, 'DRAMA', NULL, '2019-10-04', 'D'),
+    ('Toy Story', 81, 'ANIMADA', 4.5, '1995-11-22', 'D'),
+    ('Avengers: Endgame', 181, 'ACCION', 3.9, '2019-04-26', 'D'),
+    ('The Dark Knight', 152, 'ACCION', 4.9, '2008-07-18', 'D'),
+    ('Pulp Fiction', 154, 'DRAMA', 4.8, '1994-10-14', 'D'),
+    ('Forrest Gump', 142, 'DRAMA', 4.7, '1994-07-06', 'D'),
+    ('Matrix', 136, 'CIENCIA_FICCION', 4.6, '1999-03-31', 'D'),
+    ('El Padrino', 175, 'DRAMA', 5.0, '1972-03-24', 'D'),
+    ('Gladiador', 155, 'ACCION', 4.5, '2000-05-05', 'D'),
+    ('El Señor de los Anillos: El Retorno del Rey', 201, 'ACCION', 4.9, '2003-12-17', 'D'),
+    ('Spider-Man: No Way Home', 148, 'ACCION', 4.3, '2021-12-17', 'D'),
+    ('El Exorcista', 122, 'TERROR', 4.2, '1973-12-26', 'D'),
+    ('Buscando a Nemo', 100, 'ANIMADA', 4.6, '2003-05-30', 'D'),
+    ('Star Wars: Una Nueva Esperanza', 121, 'CIENCIA_FICCION', 4.8, '1977-05-25', 'D'),
+    ('El Resplandor', 146, 'TERROR', 4.4, '1980-05-23', 'D'),
+    ('Up: Una Aventura de Altura', 96, 'ANIMADA', 4.7, '2009-05-29', 'D'),
+    ('Parasitos', 132, 'DRAMA', 4.8, '2019-05-30', 'D'),
+    ('Mad Max: Fury Road', 120, 'ACCION', 4.5, '2015-05-15', 'D'),
+    ('El Silencio de los Inocentes', 118, 'TERROR', 4.6, '1991-02-14', 'D'),
+    ('Wall-E', 98, 'ANIMADA', 4.7, '2008-06-27', 'D'),
+    ('Blade Runner 2049', 164, 'CIENCIA_FICCION', 4.3, '2017-10-06', 'D'),
+    ('Los Increibles', 115, 'ANIMADA', 4.6, '2004-11-05', 'D'),
+    ('Django Sin Cadenas', 165, 'ACCION', 4.5, '2012-12-25', 'D'),
+    ('El Origen', 148, 'CIENCIA_FICCION', NULL, '2010-07-16', 'D'),
+    ('La Lista de Schindler', 195, 'DRAMA', 5.0, '1993-12-15', 'D'),
+    ('Seven', 127, 'TERROR', 4.4, '1995-09-22', 'D'),
+    ('Toy Story 3', 103, 'ANIMADA', 4.8, '2010-06-18', 'D'),
+    ('Avatar', 162, 'CIENCIA_FICCION', 4.2, '2009-12-18', 'D'),
+    ('Kill Bill Vol. 1', 111, 'ACCION', 4.4, '2003-10-10', 'D'),
+    ('IT', 135, 'TERROR', 3.8, '2017-09-08', 'D'),
+    ('Monsters Inc.', 92, 'ANIMADA', 4.5, '2001-11-02', 'D'),
+    ('El Club de la Pelea', 139, 'DRAMA', 4.7, '1999-10-15', 'D'),
+    ('300', 117, 'ACCION', 4.1, '2007-03-09', 'D'),
+    ('Terminator 2: El Juicio Final', 137, 'CIENCIA_FICCION', 4.6, '1991-07-03', 'D'),
+    ('El Aro', 115, 'TERROR', 3.5, '2002-10-18', 'D'),
+    ('Frozen', 102, 'ANIMADA', 4.3, '2013-11-27', 'D'),
+    ('El Pianista', 150, 'DRAMA', 4.8, '2002-09-25', 'D'),
+    ('Guardians of the Galaxy', 121, 'ACCION', 4.4, '2014-08-01', 'D'),
+    ('Alien: El Octavo Pasajero', 117, 'TERROR', 4.5, '1979-05-25', 'D'),
+    ('Ratatouille', 111, 'ANIMADA', 4.6, '2007-06-29', 'D'),
+    ('Dune', 155, 'CIENCIA_FICCION', 4.3, '2021-10-22', 'D'),
+    ('Logan', 137, 'ACCION', 4.5, '2017-03-03', 'D'),
+    ('Halloween', 91, 'TERROR', 3.9, '1978-10-25', 'D'),
+    ('Moana', 107, 'ANIMADA', 4.4, '2016-11-23', 'D'),
+    ('12 Años de Esclavitud', 134, 'DRAMA', 4.6, '2013-10-18', 'D'),
+    ('Iron Man', 126, 'ACCION', 4.2, '2008-05-02', 'D'),
+    ('Arrival', 116, 'CIENCIA_FICCION', 4.4, '2016-11-11', 'D'),
+    ('Pesadilla en Elm Street', 91, 'TERROR', 3.7, '1984-11-09', 'D'),
+    ('Zootopia', 108, 'ANIMADA', 4.5, '2016-03-04', 'D'),
+    ('La La Land', 128, 'DRAMA', 4.3, '2016-12-09', 'D'),
+    ('Black Panther', 134, 'ACCION', 4.2, '2018-02-16', 'D'),
+    ('Ex Machina', 108, 'CIENCIA_FICCION', 4.3, '2015-04-24', 'D'),
+    ('El Conjuro 2', 134, 'TERROR', 3.6, '2016-06-10', 'D'),
+
+    -- 20 Películas Agregadas Anteriormente
+    ('Jurassic Park', 127, 'CIENCIA_FICCION', 4.8, '1993-06-11', 'D'),
+    ('El Rey León', 88, 'ANIMADA', 4.9, '1994-06-15', 'D'),
+    ('Volver al Futuro', 116, 'CIENCIA_FICCION', 4.7, '1985-07-03', 'D'),
+    ('Duro de Matar', 132, 'ACCION', 4.6, '1988-07-15', 'D'),
+    ('Scream', 111, 'TERROR', 4.1, '1996-12-20', 'D'),
+    ('Buenos Muchachos', 146, 'DRAMA', 4.8, '1990-09-19', 'D'),
+    ('El Show de Truman', 103, 'DRAMA', 4.5, '1998-06-05', 'D'),
+    ('El Viaje de Chihiro', 125, 'ANIMADA', 4.8, '2001-07-20', 'D'),
+    ('Terminator', 107, 'CIENCIA_FICCION', 4.5, '1984-10-26', 'D'),
+    ('Indiana Jones y los Cazadores del Arca Perdida', 115, 'ACCION', 4.7, '1981-06-12', 'D'),
+    ('Saw: Juego Macabro', 103, 'TERROR', 4.0, '2004-10-29', 'D'),
+    ('Atrápame si puedes', 141, 'DRAMA', 4.4, '2002-12-25', 'D'),
+    ('Intensamente', 95, 'ANIMADA', 4.6, '2015-06-19', 'D'),
+    ('Deadpool', 108, 'ACCION', 4.5, '2016-02-12', 'D'),
+    ('Un Lugar en Silencio', 90, 'TERROR', 4.3, '2018-04-06', 'D'),
+    ('Misión Rescate', 144, 'CIENCIA_FICCION', 4.6, '2015-10-02', 'D'),
+    ('Casablanca', 102, 'DRAMA', 4.8, '1942-11-26', 'D'),
+    ('Spider-Man: Un Nuevo Universo', 117, 'ANIMADA', 4.8, '2018-12-14', 'D'),
+    ('Braveheart', 178, 'ACCION', 4.6, '1995-05-24', 'D'),
+    ('El Sexto Sentido', 107, 'TERROR', 4.5, '1999-08-06', 'D'),
+
+    -- 20 Películas Nuevas Adicionales (Total: 100)
+    ('El Lobo de Wall Street', 180, 'DRAMA', 4.6, '2013-12-25', 'D'),
+    ('Tiburón', 124, 'TERROR', 4.5, '1975-06-20', 'D'),
+    ('Whiplash', 106, 'DRAMA', 4.8, '2014-10-10', 'D'),
+    ('El Laberinto del Fauno', 118, 'DRAMA', 4.7, '2006-10-11', 'D'),
+    ('Top Gun: Maverick', 130, 'ACCION', 4.8, '2022-05-27', 'D'),
+    ('Mulan', 88, 'ANIMADA', 4.4, '1998-06-19', 'D'),
+    ('V de Venganza', 132, 'ACCION', 4.5, '2005-12-11', 'D'),
+    ('E.T., el extraterrestre', 115, 'CIENCIA_FICCION', 4.6, '1982-06-11', 'D'),
+    ('Batman Inicia', 140, 'ACCION', 4.5, '2005-06-15', 'D'),
+    ('Psicosis', 109, 'TERROR', 4.7, '1960-09-08', 'D'),
+    ('Los Cazafantasmas', 105, 'CIENCIA_FICCION', 4.4, '1984-06-08', 'D'),
+    ('Rocky', 120, 'DRAMA', 4.6, '1976-11-21', 'D'),
+    ('La Sirenita', 83, 'ANIMADA', 4.3, '1989-11-17', 'D'),
+    ('El Gran Truco', 130, 'DRAMA', 4.7, '2006-10-20', 'D'),
+    ('Midsommar', 147, 'TERROR', 4.2, '2019-07-03', 'D'),
+    ('El Quinto Elemento', 126, 'CIENCIA_FICCION', 4.3, '1997-05-09', 'D'),
+    ('Tarzán', 88, 'ANIMADA', 4.4, '1999-06-18', 'D'),
+    ('Vengadores: Infinity War', 149, 'ACCION', 4.7, '2018-04-27', 'D'),
+    ('Coraline', 100, 'ANIMADA', 4.5, '2009-02-06', 'D'),
+    ('Shutter Island', 138, 'TERROR', 4.6, '2010-02-19', 'D')
 
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Inception', 148, 'CIENCIA_FICCION', NULL, '2010-07-16', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Titanic', 195, 'DRAMA', 4.6, '1997-12-19', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('John Wick', 101, 'ACCION', NULL, '2014-10-24', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Conjuro', 112, 'TERROR', 3.0, '2013-07-19', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Coco', 105, 'ANIMADA', 4.7, '2017-10-27', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Interstellar', 169, 'CIENCIA_FICCION', 5.0, '2014-11-07', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Joker', 122, 'DRAMA', NULL, '2019-10-04', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Toy Story', 81, 'ANIMADA', 4.5, '1995-11-22', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Avengers: Endgame', 181, 'ACCION', 3.9, '2019-04-26', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('The Dark Knight', 152, 'ACCION', 4.9, '2008-07-18', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Pulp Fiction', 154, 'DRAMA', 4.8, '1994-10-14', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Forrest Gump', 142, 'DRAMA', 4.7, '1994-07-06', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Matrix', 136, 'CIENCIA_FICCION', 4.6, '1999-03-31', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Padrino', 175, 'DRAMA', 5.0, '1972-03-24', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Gladiador', 155, 'ACCION', 4.5, '2000-05-05', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Señor de los Anillos: El Retorno del Rey', 201, 'ACCION', 4.9, '2003-12-17', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Spider-Man: No Way Home', 148, 'ACCION', 4.3, '2021-12-17', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Exorcista', 122, 'TERROR', 4.2, '1973-12-26', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Buscando a Nemo', 100, 'ANIMADA', 4.6, '2003-05-30', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Star Wars: Una Nueva Esperanza', 121, 'CIENCIA_FICCION', 4.8, '1977-05-25', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Resplandor', 146, 'TERROR', 4.4, '1980-05-23', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Up: Una Aventura de Altura', 96, 'ANIMADA', 4.7, '2009-05-29', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Parasitos', 132, 'DRAMA', 4.8, '2019-05-30', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Mad Max: Fury Road', 120, 'ACCION', 4.5, '2015-05-15', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Silencio de los Inocentes', 118, 'TERROR', 4.6, '1991-02-14', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Wall-E', 98, 'ANIMADA', 4.7, '2008-06-27', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Blade Runner 2049', 164, 'CIENCIA_FICCION', 4.3, '2017-10-06', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Los Increibles', 115, 'ANIMADA', 4.6, '2004-11-05', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Django Sin Cadenas', 165, 'ACCION', 4.5, '2012-12-25', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Origen', 148, 'CIENCIA_FICCION', NULL, '2010-07-16', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('La Lista de Schindler', 195, 'DRAMA', 5.0, '1993-12-15', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Seven', 127, 'TERROR', 4.4, '1995-09-22', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Toy Story 3', 103, 'ANIMADA', 4.8, '2010-06-18', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Avatar', 162, 'CIENCIA_FICCION', 4.2, '2009-12-18', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Kill Bill Vol. 1', 111, 'ACCION', 4.4, '2003-10-10', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('IT', 135, 'TERROR', 3.8, '2017-09-08', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Monsters Inc.', 92, 'ANIMADA', 4.5, '2001-11-02', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Club de la Pelea', 139, 'DRAMA', 4.7, '1999-10-15', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('300', 117, 'ACCION', 4.1, '2007-03-09', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Terminator 2: El Juicio Final', 137, 'CIENCIA_FICCION', 4.6, '1991-07-03', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Aro', 115, 'TERROR', 3.5, '2002-10-18', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Frozen', 102, 'ANIMADA', 4.3, '2013-11-27', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Pianista', 150, 'DRAMA', 4.8, '2002-09-25', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Guardians of the Galaxy', 121, 'ACCION', 4.4, '2014-08-01', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Alien: El Octavo Pasajero', 117, 'TERROR', 4.5, '1979-05-25', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Ratatouille', 111, 'ANIMADA', 4.6, '2007-06-29', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Dune', 155, 'CIENCIA_FICCION', 4.3, '2021-10-22', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Logan', 137, 'ACCION', 4.5, '2017-03-03', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Halloween', 91, 'TERROR', 3.9, '1978-10-25', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Moana', 107, 'ANIMADA', 4.4, '2016-11-23', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('12 Años de Esclavitud', 134, 'DRAMA', 4.6, '2013-10-18', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Iron Man', 126, 'ACCION', 4.2, '2008-05-02', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Arrival', 116, 'CIENCIA_FICCION', 4.4, '2016-11-11', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Pesadilla en Elm Street', 91, 'TERROR', 3.7, '1984-11-09', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Zootopia', 108, 'ANIMADA', 4.5, '2016-03-04', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('La La Land', 128, 'DRAMA', 4.3, '2016-12-09', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Black Panther', 134, 'ACCION', 4.2, '2018-02-16', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Ex Machina', 108, 'CIENCIA_FICCION', 4.3, '2015-04-24', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Conjuro 2', 134, 'TERROR', 3.6, '2016-06-10', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('The Dark Knight', 152, 'ACCION', 4.9, '2008-07-18', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Pulp Fiction', 154, 'DRAMA', 4.8, '1994-10-14', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Forrest Gump', 142, 'DRAMA', 4.7, '1994-07-06', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Matrix', 136, 'CIENCIA_FICCION', 4.6, '1999-03-31', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Padrino', 175, 'DRAMA', 5.0, '1972-03-24', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Gladiador', 155, 'ACCION', 4.5, '2000-05-05', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Señor de los Anillos: El Retorno del Rey', 201, 'ACCION', 4.9, '2003-12-17', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Spider-Man: No Way Home', 148, 'ACCION', 4.3, '2021-12-17', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Exorcista', 122, 'TERROR', 4.2, '1973-12-26', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Buscando a Nemo', 100, 'ANIMADA', 4.6, '2003-05-30', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Star Wars: Una Nueva Esperanza', 121, 'CIENCIA_FICCION', 4.8, '1977-05-25', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Resplandor', 146, 'TERROR', 4.4, '1980-05-23', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Up: Una Aventura de Altura', 96, 'ANIMADA', 4.7, '2009-05-29', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Parasitos', 132, 'DRAMA', 4.8, '2019-05-30', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Mad Max: Fury Road', 120, 'ACCION', 4.5, '2015-05-15', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Silencio de los Inocentes', 118, 'TERROR', 4.6, '1991-02-14', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Wall-E', 98, 'ANIMADA', 4.7, '2008-06-27', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Blade Runner 2049', 164, 'CIENCIA_FICCION', 4.3, '2017-10-06', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Los Increibles', 115, 'ANIMADA', 4.6, '2004-11-05', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Django Sin Cadenas', 165, 'ACCION', 4.5, '2012-12-25', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Origen', 148, 'CIENCIA_FICCION', NULL, '2010-07-16', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('La Lista de Schindler', 195, 'DRAMA', 5.0, '1993-12-15', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Seven', 127, 'TERROR', 4.4, '1995-09-22', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Toy Story 3', 103, 'ANIMADA', 4.8, '2010-06-18', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Avatar', 162, 'CIENCIA_FICCION', 4.2, '2009-12-18', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Kill Bill Vol. 1', 111, 'ACCION', 4.4, '2003-10-10', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('IT', 135, 'TERROR', 3.8, '2017-09-08', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Monsters Inc.', 92, 'ANIMADA', 4.5, '2001-11-02', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Club de la Pelea', 139, 'DRAMA', 4.7, '1999-10-15', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('300', 117, 'ACCION', 4.1, '2007-03-09', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Terminator 2: El Juicio Final', 137, 'CIENCIA_FICCION', 4.6, '1991-07-03', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Aro', 115, 'TERROR', 3.5, '2002-10-18', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Frozen', 102, 'ANIMADA', 4.3, '2013-11-27', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Pianista', 150, 'DRAMA', 4.8, '2002-09-25', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Guardians of the Galaxy', 121, 'ACCION', 4.4, '2014-08-01', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Alien: El Octavo Pasajero', 117, 'TERROR', 4.5, '1979-05-25', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Ratatouille', 111, 'ANIMADA', 4.6, '2007-06-29', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Dune', 155, 'CIENCIA_FICCION', 4.3, '2021-10-22', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Logan', 137, 'ACCION', 4.5, '2017-03-03', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Halloween', 91, 'TERROR', 3.9, '1978-10-25', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Moana', 107, 'ANIMADA', 4.4, '2016-11-23', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('12 Años de Esclavitud', 134, 'DRAMA', 4.6, '2013-10-18', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Iron Man', 126, 'ACCION', 4.2, '2008-05-02', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Arrival', 116, 'CIENCIA_FICCION', 4.4, '2016-11-11', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Pesadilla en Elm Street', 91, 'TERROR', 3.7, '1984-11-09', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Zootopia', 108, 'ANIMADA', 4.5, '2016-03-04', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('La La Land', 128, 'DRAMA', 4.3, '2016-12-09', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Black Panther', 134, 'ACCION', 4.2, '2018-02-16', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('Ex Machina', 108, 'CIENCIA_FICCION', 4.3, '2015-04-24', 'D')
-    ON CONFLICT (titulo) DO NOTHING;
-
-INSERT INTO platzi_play_peliculas (titulo, duracion, genero, calificacion, fecha_estreno, estado)
-VALUES ('El Conjuro 2', 134, 'TERROR', 3.6, '2016-06-10', 'D')
     ON CONFLICT (titulo) DO NOTHING;

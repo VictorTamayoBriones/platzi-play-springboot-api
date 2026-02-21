@@ -50,4 +50,14 @@ public class MovieEntityRepository implements MovieRepository {
 
         return this.movieMapper.toDto(entity);
     }
+
+    @Override
+    public Boolean delete(Long id) {
+
+        this.crudMovieEntity.deleteById(id);
+
+        MovieEntity isMovieDeleted = this.crudMovieEntity.findById(id).orElse(null);
+
+        return isMovieDeleted == null;
+    }
 }
